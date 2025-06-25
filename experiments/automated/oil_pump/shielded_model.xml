@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.6//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_6.dtd'>
+<nta>
+	<declaration>// State
+clock l, t;    // minimum switching Latency, cycle Time
+hybrid clock v = 10;
+int p = 0;    // Pump status
+
+// Bookkeeping
+int switches; // number of Switches to the pump state
+int number_deaths, small_deaths, big_deaths; // As in video-game deaths. Safety-violations.
+int interventions;    // by the shield
+double c, f;  // Consumption, Fluctuation
+clock elapsed, aov;    // total Elapsed time, Accumulated Oil Volume
+clock cost;
+broadcast chan on, off;
+
+// Consts
+const int OFF = 0;
+const int ON = 1;
+const double v_min = 4.9;
+const double v_max = 25.1; 
+
+// Shielding
+import "/home/andreashhp/Documents/university/direc/stratetrees/experiments/automated/oil_pump/shields/shield.so"
+{
+    int shield(double t, double v, double p, double l);
+};
+
+typedef struct {
+    bool ON;
+    bool OFF;
+} allowedActions;
+
+// Int-encoded set of actions.
+const int NONE = 0;    // {}
+const int ONLY_ON = 1;   // {on}
+const int ONLY_OFF = 2;  // {off}
+const int ON_OR_OFF = 3;  // {on, off}
+
+bool shieldEnabled = false;
+int SHIELD_DECISION = ON_OR_OFF;
+
+allowedActions getAllowedActions(double t, double v, double p, double l) {
+    if (shieldEnabled) {
+        // double pDouble = (double) p;
+        int decision = shield(t, v, p, l);
+        
+        allowedActions allowed = {
+            (decision != ONLY_OFF),
+            (decision != ONLY_ON)
+        };
+        SHIELD_DECISION = decision;
+        return allowed;
+
+    } else { 
+        allowedActions allowed = { true, true };
+        return allowed; 
+    }
+}
+
+allowedActions allowed = { true, true };
+
+int CNONE = 0;
+int CON = 0;
+int COFF = 0;
+int CBOTH = 0;
+
+void count_shield() {
+    if (shieldEnabled) {
+        int allowedActions = shield(t, v, p, l);
+        if (allowedActions == NONE) { CNONE++; }
+        else if (allowedActions == ONLY_ON) { CON++; }
+        else if (allowedActions == ONLY_OFF) { COFF++; }
+        else { CBOTH++; }
+    }
+}</declaration>
+	<template>
+		<name>Controller</name>
+		<declaration>clock x;
+int next_action;</declaration>
+		<location id="id0" x="0" y="-127">
+			<urgent/>
+		</location>
+		<location id="id1" x="0" y="0">
+			<label kind="invariant" x="-34" y="42">x  &lt;= 1 &amp;&amp;
+x' == 5</label>
+		</location>
+		<location id="id2" x="0" y="-246">
+			<committed/>
+		</location>
+		<init ref="id1"/>
+		<transition id="id3" controllable="false">
+			<source ref="id0"/>
+			<target ref="id2"/>
+			<label kind="guard" x="8" y="-195">l &lt;= 0.0</label>
+			<label kind="assignment" x="8" y="-178">count_shield(),
+allowed = getAllowedActions(t, v, p == 1 ? 1.0 : 0.0, l)</label>
+		</transition>
+		<transition id="id4" controllable="false">
+			<source ref="id0"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-76" y="-76">l &gt; 0</label>
+			<nail x="-25" y="-34"/>
+		</transition>
+		<transition id="id5">
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="guard" x="144" y="0">l &lt;= 0 &amp;&amp;
+allowed.OFF</label>
+			<label kind="synchronisation" x="212" y="-25">off!</label>
+			<nail x="195" y="-187"/>
+			<nail x="195" y="0"/>
+		</transition>
+		<transition id="id6">
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-204" y="0">l &lt;= 0 &amp;&amp;
+allowed.ON</label>
+			<label kind="synchronisation" x="-196" y="-17">on!</label>
+			<nail x="-144" y="-178"/>
+			<nail x="-145" y="0"/>
+		</transition>
+		<transition id="id7" controllable="false">
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="8" y="-85">x &gt;= 1</label>
+			<label kind="assignment" x="8" y="-68">x = 0</label>
+		</transition>
+	</template>
+	<template>
+		<name x="5" y="5">Pump</name>
+		<declaration>// Place local declarations here.
+</declaration>
+		<location id="id8" x="-51" y="0">
+			<name x="-85" y="-34">pump_off</name>
+			<label kind="invariant" x="-85" y="-68">l' == -1 &amp;&amp;
+v' == -c - f</label>
+			<label kind="exponentialrate" x="-9" y="-34">1</label>
+		</location>
+		<location id="id9" x="195" y="0">
+			<name x="161" y="-34">pump_on</name>
+			<label kind="invariant" x="161" y="-68">l' == -1 &amp;&amp;
+v' == 2.2 - c - f</label>
+			<label kind="exponentialrate" x="229" y="-34">1</label>
+		</location>
+		<init ref="id8"/>
+		<transition id="id10">
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="34" y="8">l &lt;= 0</label>
+			<label kind="synchronisation" x="34" y="-8">on?</label>
+			<label kind="assignment" x="34" y="25">l = 2,
+p = 1,
+switches++</label>
+			<nail x="8" y="8"/>
+			<nail x="17" y="-9"/>
+			<nail x="127" y="-9"/>
+			<nail x="135" y="8"/>
+		</transition>
+		<transition id="id11">
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="guard" x="25" y="-110">l &lt;= 0</label>
+			<label kind="synchronisation" x="25" y="-127">off?</label>
+			<label kind="assignment" x="25" y="-93">l = 2,
+p = 0,
+switches++</label>
+			<nail x="135" y="-8"/>
+			<nail x="127" y="-34"/>
+			<nail x="17" y="-34"/>
+			<nail x="8" y="-8"/>
+		</transition>
+	</template>
+	<template>
+		<name>Machine</name>
+		<location id="id12" x="127" y="-467">
+			<label kind="invariant" x="102" y="-501">t &lt;= 16</label>
+		</location>
+		<location id="id13" x="221" y="-467">
+			<label kind="invariant" x="195" y="-501">t &lt;= 18</label>
+		</location>
+		<location id="id14" x="-68" y="-467">
+			<label kind="invariant" x="-93" y="-501">t &lt;= 12</label>
+		</location>
+		<location id="id15" x="-161" y="-467">
+			<label kind="invariant" x="-187" y="-501">t &lt;= 10</label>
+		</location>
+		<location id="id16" x="-306" y="-467">
+			<label kind="invariant" x="-332" y="-501">t &lt;= 8</label>
+		</location>
+		<location id="id17" x="-391" y="-467">
+			<label kind="invariant" x="-416" y="-501">t &lt;= 4</label>
+		</location>
+		<location id="id18" x="-484" y="-467">
+			<label kind="invariant" x="-510" y="-501">t &lt;= 2</label>
+		</location>
+		<location id="id19" x="314" y="-467">
+			<label kind="invariant" x="288" y="-501">t &lt;= 20</label>
+		</location>
+		<location id="id20" x="34" y="-467">
+			<label kind="invariant" x="9" y="-501">t &lt;= 14</label>
+		</location>
+		<init ref="id18"/>
+		<transition id="id21" controllable="false">
+			<source ref="id12"/>
+			<target ref="id13"/>
+			<label kind="guard" x="144" y="-450">t &gt;= 16</label>
+			<label kind="assignment" x="145" y="-467">c = 0.5</label>
+		</transition>
+		<transition id="id22" controllable="false">
+			<source ref="id20"/>
+			<target ref="id12"/>
+			<label kind="guard" x="51" y="-450">t &gt;= 14</label>
+			<label kind="assignment" x="52" y="-467">c = 1.7</label>
+		</transition>
+		<transition id="id23" controllable="false">
+			<source ref="id19"/>
+			<target ref="id18"/>
+			<label kind="guard" x="357" y="-459">t &gt;= 20</label>
+			<label kind="assignment" x="357" y="-518">c = 0,
+f = 0,
+t = 0</label>
+			<nail x="356" y="-467"/>
+			<nail x="356" y="-510"/>
+			<nail x="-527" y="-510"/>
+			<nail x="-527" y="-467"/>
+		</transition>
+		<transition id="id24" controllable="false">
+			<source ref="id13"/>
+			<target ref="id19"/>
+			<label kind="guard" x="238" y="-433">t &gt;= 18</label>
+			<label kind="assignment" x="236" y="-467">c = 0, 
+f = 0</label>
+		</transition>
+		<transition id="id25" controllable="false">
+			<source ref="id14"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-51" y="-433">t &gt;= 12</label>
+			<label kind="assignment" x="-50" y="-467">c = 0, 
+f = 0</label>
+		</transition>
+		<transition id="id26" controllable="false">
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-144" y="-450">t &gt;= 10</label>
+			<label kind="assignment" x="-144" y="-467">c = 2.5</label>
+		</transition>
+		<transition id="id27" controllable="false">
+			<source ref="id16"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-290" y="-450">t &gt;= 8</label>
+			<label kind="assignment" x="-289" y="-467">c = 1.2</label>
+		</transition>
+		<transition id="id28" controllable="false">
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-374" y="-433">t &gt;= 4</label>
+			<label kind="assignment" x="-374" y="-467">c = 0,
+f = 0</label>
+		</transition>
+		<transition id="id29" controllable="false">
+			<source ref="id18"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-467" y="-450">t &gt;= 2</label>
+			<label kind="assignment" x="-467" y="-467">c = 1.2</label>
+		</transition>
+	</template>
+	<template>
+		<name>Fluctuation</name>
+		<declaration>clock x;</declaration>
+		<location id="id30" x="178" y="136">
+			<label kind="invariant" x="144" y="85">x  &lt;= 1 &amp;&amp;
+x' == 10</label>
+			<label kind="exponentialrate" x="144" y="68">1</label>
+		</location>
+		<init ref="id30"/>
+		<transition id="id31" controllable="false">
+			<source ref="id30"/>
+			<target ref="id30"/>
+			<label kind="guard" x="42" y="118">x &gt;= 1 &amp;&amp;
+c == 0</label>
+			<label kind="assignment" x="42" y="161">x = 0,
+f = 0</label>
+			<nail x="119" y="195"/>
+			<nail x="119" y="136"/>
+		</transition>
+		<transition id="id32" controllable="false">
+			<source ref="id30"/>
+			<target ref="id30"/>
+			<label kind="guard" x="243" y="114">x &gt;= 1 &amp;&amp; 
+c &gt; 0</label>
+			<label kind="assignment" x="246" y="161">x = 0, 
+f = -0.1 + random(0.2)</label>
+			<nail x="238" y="195"/>
+			<nail x="238" y="136"/>
+		</transition>
+	</template>
+	<template>
+		<name>AccumulatedVolume</name>
+		<location id="id33" x="0" y="0">
+			<label kind="invariant" x="-42" y="-34">aov' == v</label>
+		</location>
+		<init ref="id33"/>
+	</template>
+	<template>
+		<name>Cost</name>
+		<location id="id34" x="-161" y="-34">
+			<label kind="invariant" x="-322" y="-76">cost' == (v+0.0 &lt; v_min || v+0.0 &gt; v_max ? 1000.0 : v+0.0)</label>
+		</location>
+		<init ref="id34"/>
+	</template>
+	<template>
+		<name>SafetyMonitor</name>
+		<declaration>clock x;</declaration>
+		<location id="id35" x="-34" y="-8">
+			<label kind="invariant" x="-68" y="8">x  &lt;= 1 &amp;&amp;
+x' == 5</label>
+			<label kind="exponentialrate" x="-42" y="42">1</label>
+		</location>
+		<init ref="id35"/>
+		<transition id="id36" controllable="false">
+			<source ref="id35"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-178" y="-42">x &gt;= 1 &amp;&amp;
+v &lt; v_min</label>
+			<label kind="assignment" x="-238" y="0">number_deaths += 1,
+small_deaths += 1,
+v = 10,
+x = 0</label>
+			<nail x="-93" y="-34"/>
+			<nail x="-93" y="-8"/>
+		</transition>
+		<transition id="id37" controllable="false">
+			<source ref="id35"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-76" y="-102">x &gt;= 1 &amp;&amp;
+v &gt;= v_min &amp;&amp;
+v &lt;= v_max</label>
+			<label kind="assignment" x="-76" y="-119">x = 0</label>
+			<nail x="-68" y="-42"/>
+			<nail x="0" y="-42"/>
+		</transition>
+		<transition id="id38" controllable="false">
+			<source ref="id35"/>
+			<target ref="id35"/>
+			<label kind="guard" x="34" y="-42">x &gt;= 1 &amp;&amp; 
+v &gt; v_max</label>
+			<label kind="assignment" x="34" y="0">number_deaths += 1,
+big_deaths += 1,
+v = 10,
+x = 0</label>
+			<nail x="25" y="-34"/>
+			<nail x="26" y="-8"/>
+		</transition>
+	</template>
+	<system>// List one or more processes to be composed into a system.
+system Controller, Pump, Machine, Fluctuation, AccumulatedVolume, SafetyMonitor, Cost;
+</system>
+	<queries>
+		<option key="--total-runs" value="1000"/>
+		<option key="--max-iterations" value="1"/>
+		<option key="--good-runs" value="1000"/>
+		<option key="--eval-runs" value="1000"/>
+		<option key="--runs-pr-state" value="1000"/>
+		<query>
+			<formula>strategy minAOVwShield = minE(cost) [&lt;=120] {} -&gt; {t, v, p, l}: &lt;&gt; elapsed &gt;= 120</formula>
+			<comment/>
+			<result outcome="success" type="quality" timestamp="2024-01-18 03:40:10 +0100">
+				<option key="--total-runs" value="1000"/>
+				<option key="--max-iterations" value="1"/>
+				<option key="--good-runs" value="1000"/>
+				<option key="--eval-runs" value="1000"/>
+				<option key="--runs-pr-state" value="1000"/>
+			</result>
+		</query>
+		<query>
+			<formula>saveStrategy("/home/andreashhp/Documents/university/direc/stratetrees/experiments/automated/oil_pump/unshielded_strategy.json", minAOVwShield)</formula>
+			<comment/>
+		</query>
+		<query>
+			<formula>strategy S = loadStrategy {} -&gt; {t, v, p, l} ("/home/andreashhp/Documents/university/direc/stratetrees/experiments/automated/oil_pump/unshielded_strategy.json")</formula>
+			<comment/>
+		</query>
+		<query>
+			<formula/>
+			<comment/>
+		</query>
+		<query>
+			<formula>E[&lt;=120;100](max: aov) under minAOVwShield</formula>
+			<comment/>
+			<result outcome="success" type="quantity" value="913.213 ± 3.62433 (95% CI)" timestamp="2024-01-18 03:40:22 +0100">
+				<option key="--total-runs" value="1000"/>
+				<option key="--max-iterations" value="1"/>
+				<option key="--good-runs" value="1000"/>
+				<option key="--eval-runs" value="1000"/>
+				<option key="--runs-pr-state" value="1000"/>
+				<details>913.213 ± 3.62433 (95% CI)</details>
+				<plot title="Probability Density Distribution" xaxis="max: aov" yaxis="probability density">
+					<series title="density" type="b(9.073618)" color="0x0000ff" encoding="csv">873.6984268830423,0.007714673818744925
+882.7720444648921,0.004408385039282815
+891.8456620467418,0.014327251377669147
+900.9192796285917,0.018735636416951962
+909.9928972104414,0.026450310235696887
+919.0665147922912,0.01763354015713126
+928.1401323741409,0.00881677007856563
+937.2137499559907,0.006612577558924222
+946.2873675378404,0.004408385039282815
+955.3609851196902,0.0011020962598207037
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">913.2126797362943,0.0
+913.2126797362943,0.026450310235696887
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=9.0736, bucket count=10
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [873.7, 964.43]
+Mean estimate of displayed sample: 913.21 ± 3.6243 (95% CI)</comment>
+				</plot>
+				<plot title="Probability Distribution" xaxis="max: aov" yaxis="probability">
+					<series title="probability" type="b(9.073618)" color="0x0000ff" encoding="csv">873.6984268830423,0.07
+882.7720444648921,0.04
+891.8456620467418,0.13
+900.9192796285917,0.17
+909.9928972104414,0.24
+919.0665147922912,0.16
+928.1401323741409,0.08
+937.2137499559907,0.06
+946.2873675378404,0.04
+955.3609851196902,0.01
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">913.2126797362943,0.0
+913.2126797362943,0.24
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=9.0736, bucket count=10
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [873.7, 964.43]
+Mean estimate of displayed sample: 913.21 ± 3.6243 (95% CI)</comment>
+				</plot>
+				<plot title="Cumulative Probability Distribution" xaxis="max: aov" yaxis="probability">
+					<series title="cumulative" type="l" color="0x000000" encoding="csv">873.6984268830423,0.0
+882.7720444648921,0.07
+891.8456620467418,0.11
+900.9192796285917,0.24
+909.9928972104414,0.41
+919.0665147922912,0.65
+928.1401323741409,0.81
+937.2137499559907,0.89
+946.2873675378404,0.95
+955.3609851196902,0.99
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">913.2126797362943,0.0
+913.2126797362943,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=9.0736, bucket count=10
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [873.7, 964.43]
+Mean estimate of displayed sample: 913.21 ± 3.6243 (95% CI)</comment>
+				</plot>
+				<plot title="Cumulative Probability Confidence Intervals" xaxis="max: aov" yaxis="probability">
+					<series title="upper limit" type="k" color="0x0000dd" encoding="csv">873.6984268830423,0.03621669264517642
+882.7720444648921,0.13891972845585734
+891.8456620467418,0.1883011321964426
+900.9192796285917,0.3357354892709986
+909.9928972104414,0.5128557962332292
+919.0665147922912,0.7427062214685488
+928.1401323741409,0.8815568038674564
+937.2137499559907,0.9437929797145126
+946.2873675378404,0.9835681208179479
+955.3609851196902,0.9997468539670226
+					</series>
+					<series title="lower limit" type="k" color="0xdd0000" encoding="csv">873.6984268830423,0.0
+882.7720444648921,0.028605288907438693
+891.8456620467418,0.05620702028548746
+900.9192796285917,0.16022461317144715
+909.9928972104414,0.3126199765675708
+919.0665147922912,0.5481506381760305
+928.1401323741409,0.7193020420263875
+937.2137499559907,0.8116988678035574
+946.2873675378404,0.8871650888945373
+955.3609851196902,0.9455406146079194
+					</series>
+					<series title="cumulative" type="l" color="0x000000" encoding="csv">873.6984268830423,0.0
+882.7720444648921,0.07
+891.8456620467418,0.11
+900.9192796285917,0.24
+909.9928972104414,0.41
+919.0665147922912,0.65
+928.1401323741409,0.81
+937.2137499559907,0.89
+946.2873675378404,0.95
+955.3609851196902,0.99
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">913.2126797362943,0.0
+913.2126797362943,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=9.0736, bucket count=10
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [873.7, 964.43]
+Mean estimate of displayed sample: 913.21 ± 3.6243 (95% CI)</comment>
+				</plot>
+				<plot title="Frequency Histogram" xaxis="max: aov" yaxis="count">
+					<series title="count" type="b(9.073618)" color="0x0000ff" encoding="csv">873.6984268830423,7.0
+882.7720444648921,4.0
+891.8456620467418,13.0
+900.9192796285917,17.0
+909.9928972104414,24.0
+919.0665147922912,16.0
+928.1401323741409,8.0
+937.2137499559907,6.0
+946.2873675378404,4.0
+955.3609851196902,1.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">913.2126797362943,0.0
+913.2126797362943,24.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=9.0736, bucket count=10
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [873.7, 964.43]
+Mean estimate of displayed sample: 913.21 ± 3.6243 (95% CI)</comment>
+				</plot>
+			</result>
+		</query>
+		<query>
+			<formula>E[&lt;=120;100](max: number_deaths) under minAOVwShield</formula>
+			<comment/>
+			<result outcome="success" type="quantity" value="≈ 0" timestamp="2024-01-17 22:01:31 +0100">
+				<option key="--total-runs" value="1000"/>
+				<option key="--max-iterations" value="1"/>
+				<option key="--good-runs" value="1000"/>
+				<option key="--eval-runs" value="1000"/>
+				<option key="--runs-pr-state" value="1000"/>
+				<details>≈ 0</details>
+				<plot title="Probability Density Distribution" xaxis="max: number_deaths" yaxis="probability density">
+					<series title="density" type="b(1.000000)" color="0x0000ff" encoding="csv">0.0,1.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">0.0,0.0
+0.0,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=1, bucket count=1
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [0, 0]
+Mean estimate of displayed sample: ≈ 0</comment>
+				</plot>
+				<plot title="Probability Distribution" xaxis="max: number_deaths" yaxis="probability">
+					<series title="probability" type="b(1.000000)" color="0x0000ff" encoding="csv">0.0,1.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">0.0,0.0
+0.0,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=1, bucket count=1
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [0, 0]
+Mean estimate of displayed sample: ≈ 0</comment>
+				</plot>
+				<plot title="Cumulative Probability Distribution" xaxis="max: number_deaths" yaxis="probability">
+					<series title="cumulative" type="l" color="0x000000" encoding="csv">0.0,0.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">0.0,0.0
+0.0,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=1, bucket count=1
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [0, 0]
+Mean estimate of displayed sample: ≈ 0</comment>
+				</plot>
+				<plot title="Cumulative Probability Confidence Intervals" xaxis="max: number_deaths" yaxis="probability">
+					<series title="upper limit" type="k" color="0x0000dd" encoding="csv">0.0,0.03621669264517642
+					</series>
+					<series title="lower limit" type="k" color="0xdd0000" encoding="csv">0.0,0.0
+					</series>
+					<series title="cumulative" type="l" color="0x000000" encoding="csv">0.0,0.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">0.0,0.0
+0.0,1.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=1, bucket count=1
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [0, 0]
+Mean estimate of displayed sample: ≈ 0</comment>
+				</plot>
+				<plot title="Frequency Histogram" xaxis="max: number_deaths" yaxis="count">
+					<series title="count" type="b(1.000000)" color="0x0000ff" encoding="csv">0.0,100.0
+					</series>
+					<series title="average" type="pl" color="0x00dd00" encoding="csv">0.0,0.0
+0.0,100.0
+					</series>
+					<comment>Parameters: α=0.05, ε=0.05, bucket width=1, bucket count=1
+Runs: 100 in total, 100 (100%) displayed, 0 (0%) remaining
+Span of displayed sample: [0, 0]
+Mean estimate of displayed sample: ≈ 0</comment>
+				</plot>
+			</result>
+		</query>
+	</queries>
+</nta>

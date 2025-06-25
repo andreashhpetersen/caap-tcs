@@ -1,0 +1,2554 @@
+{
+  "bb_shield_1000": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7,
+          "inner nodes": 3,
+          "paths": 4,
+          "bandwidth": 2
+        },
+        "time": "00:00:00.218"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0,
+          -14.0
+        ],
+        "min_outer": [
+          0.0,
+          -14.0
+        ],
+        "max_inner": [
+          10.01,
+          14.01
+        ],
+        "max_outer": [
+          10.01,
+          14.01
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 1000,
+        "num_flattened": 2000
+      }
+    }
+  },
+  "bb_shield_mp_1": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 1897,
+          "inner nodes": 948,
+          "paths": 949,
+          "bandwidth": 10
+        },
+        "time": "00:00:05.250"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0018382348784982,
+          -13.782267546033871
+        ],
+        "min_outer": [
+          0.0018382348784982,
+          -13.782267546033871
+        ],
+        "max_inner": [
+          9.923703656291003,
+          13.998847474121227
+        ],
+        "max_outer": [
+          9.923703656291003,
+          13.998847474121227
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 3791,
+        "num_flattened": 7582
+      }
+    }
+  },
+  "bb_shield_mp_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2589,
+          "inner nodes": 1294,
+          "paths": 1295,
+          "bandwidth": 11
+        },
+        "time": "00:00:12.033"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0002257841312195,
+          -13.973421186202383
+        ],
+        "min_outer": [
+          0.0002257841312195,
+          -13.973421186202383
+        ],
+        "max_inner": [
+          9.986114924336617,
+          13.934560420332051
+        ],
+        "max_outer": [
+          9.986114924336617,
+          13.934560420332051
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 7582,
+        "num_flattened": 15164
+      }
+    }
+  },
+  "bb_shield_mp_4": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 3507,
+          "inner nodes": 1753,
+          "paths": 1754,
+          "bandwidth": 11
+        },
+        "time": "00:00:30.045"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0003132981121584,
+          -13.961967452293466
+        ],
+        "min_outer": [
+          0.0003132981121584,
+          -13.961967452293466
+        ],
+        "max_inner": [
+          9.995726762652255,
+          13.991689996562542
+        ],
+        "max_outer": [
+          9.995726762652255,
+          13.991689996562542
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 15164,
+        "num_flattened": 30328
+      }
+    }
+  },
+  "bb_shield_mp_8": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4219,
+          "inner nodes": 2109,
+          "paths": 2110,
+          "bandwidth": 12
+        },
+        "time": "00:01:19.566"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          4.591974258630005e-05,
+          -13.978094304391416
+        ],
+        "min_outer": [
+          4.591974258630005e-05,
+          -13.978094304391416
+        ],
+        "max_inner": [
+          10.008126552101498,
+          14.006265862701426
+        ],
+        "max_outer": [
+          10.008126552101498,
+          14.006265862701426
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 30328,
+        "num_flattened": 60656
+      }
+    }
+  },
+  "bb_shield_partitions_1": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 1827,
+          "inner nodes": 913,
+          "paths": 914,
+          "bandwidth": 10
+        },
+        "time": "00:00:05.530"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0004048830150177,
+          -13.958202430557575
+        ],
+        "min_outer": [
+          0.0004048830150177,
+          -13.958202430557575
+        ],
+        "max_inner": [
+          9.99193425741896,
+          13.975339981025446
+        ],
+        "max_outer": [
+          9.99193425741896,
+          13.975339981025446
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 3791,
+        "num_flattened": 7582
+      }
+    }
+  },
+  "bb_shield_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4723,
+          "inner nodes": 2361,
+          "paths": 2362,
+          "bandwidth": 12
+        },
+        "time": "00:04:30.441"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          2.824131963335752e-05,
+          -13.997540704388843
+        ],
+        "min_outer": [
+          2.824131963335752e-05,
+          -13.997540704388843
+        ],
+        "max_inner": [
+          10.008313311937624,
+          14.005276158559257
+        ],
+        "max_outer": [
+          10.008313311937624,
+          14.005276158559257
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 60656,
+        "num_flattened": 121312
+      }
+    }
+  },
+  "bb_shield_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2527,
+          "inner nodes": 1263,
+          "paths": 1264,
+          "bandwidth": 11
+        },
+        "time": "00:00:12.158"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          5.671519235320166e-05,
+          -13.988582124430406
+        ],
+        "min_outer": [
+          5.671519235320166e-05,
+          -13.988582124430406
+        ],
+        "max_inner": [
+          9.926813475661788,
+          13.924770026067344
+        ],
+        "max_outer": [
+          9.926813475661788,
+          13.924770026067344
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 7582,
+        "num_flattened": 15164
+      }
+    }
+  },
+  "bb_shield_partitions_4": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 3331,
+          "inner nodes": 1665,
+          "paths": 1666,
+          "bandwidth": 11
+        },
+        "time": "00:00:32.442"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0003207698341876,
+          -13.976816535582437
+        ],
+        "min_outer": [
+          0.0003207698341876,
+          -13.976816535582437
+        ],
+        "max_inner": [
+          10.001555257063432,
+          14.004474630077237
+        ],
+        "max_outer": [
+          10.001555257063432,
+          14.004474630077237
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 15164,
+        "num_flattened": 30328
+      }
+    }
+  },
+  "bb_shield_partitions_8": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4271,
+          "inner nodes": 2135,
+          "paths": 2136,
+          "bandwidth": 12
+        },
+        "time": "00:01:40.174"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0001441495138989,
+          -13.994449540469528
+        ],
+        "min_outer": [
+          0.0001441495138989,
+          -13.994449540469528
+        ],
+        "max_inner": [
+          10.004876756236689,
+          14.009114891974352
+        ],
+        "max_outer": [
+          10.004876756236689,
+          14.009114891974352
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 30328,
+        "num_flattened": 60656
+      }
+    }
+  },
+  "bb_shield_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2023,
+          "inner nodes": 1011,
+          "paths": 1012,
+          "bandwidth": 10
+        },
+        "time": "00:00:03.788"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.005,
+          -13.445
+        ],
+        "min_outer": [
+          0.005,
+          -13.445
+        ],
+        "max_inner": [
+          9.51,
+          12.485
+        ],
+        "max_outer": [
+          9.51,
+          12.485
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 3791,
+        "num_flattened": 7582
+      }
+    }
+  },
+  "bb_shield_from_mp_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2023,
+          "inner nodes": 1011,
+          "paths": 1012,
+          "bandwidth": 10
+        },
+        "time": "00:00:02.823"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.005,
+          -13.445
+        ],
+        "min_outer": [
+          0.005,
+          -13.445
+        ],
+        "max_inner": [
+          9.51,
+          12.485
+        ],
+        "max_outer": [
+          9.51,
+          12.485
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 3791,
+        "num_flattened": 7582
+      }
+    }
+  },
+  "bb_shield_10000": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7,
+          "inner nodes": 3,
+          "paths": 4,
+          "bandwidth": 2
+        },
+        "time": "00:00:03.389"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0,
+          -14.0
+        ],
+        "min_outer": [
+          0.0,
+          -14.0
+        ],
+        "max_inner": [
+          10.01,
+          14.01
+        ],
+        "max_outer": [
+          10.01,
+          14.01
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 10000,
+        "num_flattened": 20000
+      }
+    }
+  },
+  "bb_shield_100000": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7,
+          "inner nodes": 3,
+          "paths": 4,
+          "bandwidth": 2
+        },
+        "time": "00:04:27.731"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0,
+          -14.0
+        ],
+        "min_outer": [
+          0.0,
+          -14.0
+        ],
+        "max_inner": [
+          10.01,
+          14.01
+        ],
+        "max_outer": [
+          10.01,
+          14.01
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 100000,
+        "num_flattened": 200000
+      }
+    }
+  },
+  "bb_shield_1000000": {
+    "classifiers": {
+      "CART": "timeout"
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0,
+          -14.0
+        ],
+        "min_outer": [
+          0.0,
+          -14.0
+        ],
+        "max_inner": [
+          10.01,
+          14.01
+        ],
+        "max_outer": [
+          10.01,
+          14.01
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 1000000,
+        "num_flattened": 2000000
+      }
+    }
+  },
+  "cruise_shield_partitions_1": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4947,
+          "inner nodes": 2473,
+          "paths": 2474,
+          "bandwidth": 12
+        },
+        "time": "00:01:03.043"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.958385437007648,
+          -7.999890918805318,
+          0.0005925598115392
+        ],
+        "min_outer": [
+          -9.958385437007648,
+          -7.999890918805318,
+          0.0005925598115392
+        ],
+        "max_inner": [
+          19.99954464202443,
+          19.99755279565189,
+          199.97303395737555
+        ],
+        "max_outer": [
+          19.99954464202443,
+          19.99755279565189,
+          199.97303395737555
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 12186,
+        "num_flattened": 36558
+      }
+    }
+  },
+  "cruise_shield_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 20305,
+          "inner nodes": 10152,
+          "paths": 10153,
+          "bandwidth": 14
+        },
+        "time": "01:43:41.434"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.999207352326694,
+          -7.999920681864854,
+          6.846063708321193e-06
+        ],
+        "min_outer": [
+          -9.999207352326694,
+          -7.999920681864854,
+          6.846063708321193e-06
+        ],
+        "max_inner": [
+          19.99999607392682,
+          19.999889404458056,
+          199.99974907695983
+        ],
+        "max_outer": [
+          19.99999607392682,
+          19.999889404458056,
+          199.99974907695983
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 194976,
+        "num_flattened": 584928
+      }
+    }
+  },
+  "cruise_shield_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7517,
+          "inner nodes": 3758,
+          "paths": 3759,
+          "bandwidth": 12
+        },
+        "time": "00:03:04.973"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.992536949572118,
+          -7.999165996659246,
+          0.0007691807333172
+        ],
+        "min_outer": [
+          -9.992536949572118,
+          -7.999165996659246,
+          0.0007691807333172
+        ],
+        "max_inner": [
+          19.999980925007595,
+          19.99249009533689,
+          199.9540729949037
+        ],
+        "max_outer": [
+          19.999980925007595,
+          19.99249009533689,
+          199.9540729949037
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 24372,
+        "num_flattened": 73116
+      }
+    }
+  },
+  "random_walk_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 75,
+          "inner nodes": 37,
+          "paths": 38,
+          "bandwidth": 6
+        },
+        "time": "00:00:00.321"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0009045525099402,
+          0.0287729159108848
+        ],
+        "min_outer": [
+          0.0009045525099402,
+          0.0287729159108848
+        ],
+        "max_inner": [
+          1.1963512757132024,
+          1.1997091985378976
+        ],
+        "max_outer": [
+          1.1963512757132024,
+          1.1997091985378976
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 704,
+        "num_flattened": 1408
+      }
+    }
+  },
+  "random_walk_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 45,
+          "inner nodes": 22,
+          "paths": 23,
+          "bandwidth": 5
+        },
+        "time": "00:00:00.031"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0087620129154884,
+          0.0498456078162642
+        ],
+        "min_outer": [
+          0.0087620129154884,
+          0.0498456078162642
+        ],
+        "max_inner": [
+          1.1749305197747952,
+          1.1664463946626362
+        ],
+        "max_outer": [
+          1.1749305197747952,
+          1.1664463946626362
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 88,
+        "num_flattened": 176
+      }
+    }
+  },
+  "random_walk_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 27,
+          "inner nodes": 13,
+          "paths": 14,
+          "bandwidth": 4
+        },
+        "time": "00:00:00.011"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0175,
+          0.06
+        ],
+        "min_outer": [
+          0.0175,
+          0.06
+        ],
+        "max_inner": [
+          1.1,
+          1.1
+        ],
+        "max_outer": [
+          1.1,
+          1.1
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          3
+        ],
+        "step_size": null,
+        "num_rows": 44,
+        "num_flattened": 88
+      }
+    }
+  },
+  "bouncing_ball_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4925,
+          "inner nodes": 2462,
+          "paths": 2463,
+          "bandwidth": 12
+        },
+        "time": "00:04:17.313"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          6.460142603351038e-05,
+          -13.996775980331378
+        ],
+        "min_outer": [
+          6.460142603351038e-05,
+          -13.996775980331378
+        ],
+        "max_inner": [
+          10.007090647793556,
+          13.994302993544828
+        ],
+        "max_outer": [
+          10.007090647793556,
+          13.994302993544828
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 60656,
+        "num_flattened": 121312
+      }
+    }
+  },
+  "bouncing_ball_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2495,
+          "inner nodes": 1247,
+          "paths": 1248,
+          "bandwidth": 11
+        },
+        "time": "00:00:12.773"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0006011175660174,
+          -13.939337969414582
+        ],
+        "min_outer": [
+          0.0006011175660174,
+          -13.939337969414582
+        ],
+        "max_inner": [
+          10.000973836416245,
+          13.952714196136329
+        ],
+        "max_outer": [
+          10.000973836416245,
+          13.952714196136329
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 7582,
+        "num_flattened": 15164
+      }
+    }
+  },
+  "bouncing_ball_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2023,
+          "inner nodes": 1011,
+          "paths": 1012,
+          "bandwidth": 10
+        },
+        "time": "00:00:03.055"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.005,
+          -13.445
+        ],
+        "min_outer": [
+          0.005,
+          -13.445
+        ],
+        "max_inner": [
+          9.51,
+          12.485
+        ],
+        "max_outer": [
+          9.51,
+          12.485
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 3791,
+        "num_flattened": 7582
+      }
+    }
+  },
+  "cruise_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 20775,
+          "inner nodes": 10387,
+          "paths": 10388,
+          "bandwidth": 14
+        },
+        "time": "01:42:25.827"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.99756221836097,
+          -7.999931419067681,
+          3.254834470334256e-05
+        ],
+        "min_outer": [
+          -9.99756221836097,
+          -7.999931419067681,
+          3.254834470334256e-05
+        ],
+        "max_inner": [
+          19.999968578320114,
+          19.999857691067334,
+          199.9943821065968
+        ],
+        "max_outer": [
+          19.999968578320114,
+          19.999857691067334,
+          199.9943821065968
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 194976,
+        "num_flattened": 584928
+      }
+    }
+  },
+  "cruise_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7659,
+          "inner nodes": 3829,
+          "paths": 3830,
+          "bandwidth": 12
+        },
+        "time": "00:02:53.971"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.956565512290082,
+          -7.999696006949168,
+          0.0006529785173901
+        ],
+        "min_outer": [
+          -9.956565512290082,
+          -7.999696006949168,
+          0.0006529785173901
+        ],
+        "max_inner": [
+          19.99887603301797,
+          19.998769160864548,
+          199.99211018556628
+        ],
+        "max_outer": [
+          19.99887603301797,
+          19.998769160864548,
+          199.99211018556628
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 24372,
+        "num_flattened": 73116
+      }
+    }
+  },
+  "cruise_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 5037,
+          "inner nodes": 2518,
+          "paths": 2519,
+          "bandwidth": 12
+        },
+        "time": "00:00:05.200"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.75,
+          -7.75,
+          0.25
+        ],
+        "min_outer": [
+          -9.75,
+          -7.75,
+          0.25
+        ],
+        "max_inner": [
+          19.75,
+          19.75,
+          199.75
+        ],
+        "max_outer": [
+          19.75,
+          19.75,
+          199.75
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 12186,
+        "num_flattened": 36558
+      }
+    }
+  },
+  "oil_pump_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 6153,
+          "inner nodes": 3076,
+          "paths": 3077,
+          "bandwidth": 12
+        },
+        "time": "00:30:47.782"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.000132276042823,
+          4.800099442286797,
+          5.695618394141455e-07,
+          -0.0999914086871633
+        ],
+        "min_outer": [
+          0.000132276042823,
+          4.800099442286797,
+          5.695618394141455e-07,
+          -0.0999914086871633
+        ],
+        "max_inner": [
+          20.09918117958871,
+          25.29996497746381,
+          1.9999742614442937,
+          2.099999500837479
+        ],
+        "max_outer": [
+          20.09918117958871,
+          25.29996497746381,
+          1.9999742614442937,
+          2.099999500837479
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 93744,
+        "num_flattened": 187488
+      }
+    }
+  },
+  "oil_pump_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2387,
+          "inner nodes": 1193,
+          "paths": 1194,
+          "bandwidth": 11
+        },
+        "time": "00:00:58.013"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0013605208156835,
+          4.801359418698073,
+          1.0116369308366124e-05,
+          -0.099922375948127
+        ],
+        "min_outer": [
+          0.0013605208156835,
+          4.801359418698073,
+          1.0116369308366124e-05,
+          -0.099922375948127
+        ],
+        "max_inner": [
+          20.098741898627217,
+          25.29738614219352,
+          1.9999443816600189,
+          2.099935473878461
+        ],
+        "max_outer": [
+          20.098741898627217,
+          25.29738614219352,
+          1.9999443816600189,
+          2.099935473878461
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 11718,
+        "num_flattened": 23436
+      }
+    }
+  },
+  "oil_pump_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 1419,
+          "inner nodes": 709,
+          "paths": 710,
+          "bandwidth": 10
+        },
+        "time": "00:00:01.717"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.05,
+          4.9,
+          0.25,
+          -0.05
+        ],
+        "min_outer": [
+          0.05,
+          4.9,
+          0.25,
+          -0.05
+        ],
+        "max_inner": [
+          20.05,
+          25.2,
+          1.25,
+          2.05
+        ],
+        "max_outer": [
+          20.05,
+          25.2,
+          1.25,
+          2.05
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 5859,
+        "num_flattened": 11718
+      }
+    }
+  },
+  "bb_controller_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 479,
+          "inner nodes": 239,
+          "paths": 240,
+          "bandwidth": 8
+        },
+        "time": "00:00:04.162"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0005375612560159,
+          -18.130945506330725
+        ],
+        "min_outer": [
+          0.0005375612560159,
+          -18.130945506330725
+        ],
+        "max_inner": [
+          12.90398488423697,
+          14.005004619733342
+        ],
+        "max_outer": [
+          12.90398488423697,
+          14.005004619733342
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 3456,
+        "num_flattened": 3456
+      }
+    }
+  },
+  "bb_controller_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 179,
+          "inner nodes": 89,
+          "paths": 90,
+          "bandwidth": 7
+        },
+        "time": "00:00:00.136"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.045453,
+          -16.091055
+        ],
+        "min_outer": [
+          0.045453,
+          -16.091055
+        ],
+        "max_inner": [
+          11.527206,
+          12.678764
+        ],
+        "max_outer": [
+          11.527206,
+          12.678764
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 216,
+        "num_flattened": 216
+      }
+    }
+  },
+  "cruise_controller_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 5251,
+          "inner nodes": 2625,
+          "paths": 2626,
+          "bandwidth": 12
+        },
+        "time": "00:02:46.683"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.999743914970074,
+          -8.272528230541047,
+          -1212.3776525599226
+        ],
+        "min_outer": [
+          -9.999743914970074,
+          -8.272528230541047,
+          -1212.3776525599226
+        ],
+        "max_inner": [
+          19.99386857311145,
+          19.99669866074333,
+          199.9999441453381
+        ],
+        "max_outer": [
+          19.99386857311145,
+          19.99669866074333,
+          199.9999441453381
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 36352,
+        "num_flattened": 36352
+      }
+    }
+  },
+  "cruise_controller_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 1593,
+          "inner nodes": 796,
+          "paths": 797,
+          "bandwidth": 10
+        },
+        "time": "00:00:01.576"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.556548,
+          -8.146552,
+          -1219.461547
+        ],
+        "min_outer": [
+          -9.556548,
+          -8.146552,
+          -1219.461547
+        ],
+        "max_inner": [
+          19.09589,
+          15.429487,
+          199.995748
+        ],
+        "max_outer": [
+          19.09589,
+          15.429487,
+          199.995748
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          2
+        ],
+        "step_size": null,
+        "num_rows": 2272,
+        "num_flattened": 2272
+      }
+    }
+  },
+  "dcdc_boost_converter_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 11063,
+          "inner nodes": 5531,
+          "paths": 5532,
+          "bandwidth": 13
+        },
+        "time": "00:22:01.528"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          6.89911725975767e-06,
+          14.49000754931231,
+          30.000004010470533
+        ],
+        "min_outer": [
+          6.89911725975767e-06,
+          14.49000754931231,
+          30.000004010470533
+        ],
+        "max_inner": [
+          4.009740845306813,
+          15.50989615565094,
+          200.9999461755999
+        ],
+        "max_outer": [
+          4.009740845306813,
+          15.50989615565094,
+          200.9999461755999
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 121600,
+        "num_flattened": 243200
+      }
+    }
+  },
+  "dcdc_boost_converter_partitions_2": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 4047,
+          "inner nodes": 2023,
+          "paths": 2024,
+          "bandwidth": 11
+        },
+        "time": "00:00:46.577"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0001645921006766,
+          14.490071087393453,
+          30.001308676276015
+        ],
+        "min_outer": [
+          0.0001645921006766,
+          14.490071087393453,
+          30.001308676276015
+        ],
+        "max_inner": [
+          3.982710857693922,
+          15.509651277804087,
+          200.9886373935697
+        ],
+        "max_outer": [
+          3.982710857693922,
+          15.509651277804087,
+          200.9886373935697
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 15200,
+        "num_flattened": 30400
+      }
+    }
+  },
+  "dcdc_boost_converter_partitions_centered": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 2959,
+          "inner nodes": 1479,
+          "paths": 1480,
+          "bandwidth": 11
+        },
+        "time": "00:00:03.297"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.005,
+          14.495,
+          30.5
+        ],
+        "min_outer": [
+          0.005,
+          14.495,
+          30.5
+        ],
+        "max_inner": [
+          3.25,
+          15.505,
+          200.0
+        ],
+        "max_outer": [
+          3.25,
+          15.505,
+          200.0
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 7600,
+        "num_flattened": 15200
+      }
+    }
+  },
+  "random_walk_partitions_32": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 95,
+          "inner nodes": 47,
+          "paths": 48,
+          "bandwidth": 6
+        },
+        "time": "00:00:00.644"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0001268646127479,
+          0.0072038158451348
+        ],
+        "min_outer": [
+          0.0001268646127479,
+          0.0072038158451348
+        ],
+        "max_inner": [
+          1.1994729786000864,
+          1.1990069058062889
+        ],
+        "max_outer": [
+          1.1994729786000864,
+          1.1990069058062889
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 1408,
+        "num_flattened": 2816
+      }
+    }
+  },
+  "bouncing_ball_partitions_32": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 5801,
+          "inner nodes": 2900,
+          "paths": 2901,
+          "bandwidth": 12
+        },
+        "time": "00:14:29.815"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          2.451242681472787e-05,
+          -13.999879484649773
+        ],
+        "min_outer": [
+          2.451242681472787e-05,
+          -13.999879484649773
+        ],
+        "max_inner": [
+          10.009719036830898,
+          14.005480142967926
+        ],
+        "max_outer": [
+          10.009719036830898,
+          14.005480142967926
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 121312,
+        "num_flattened": 242624
+      }
+    }
+  },
+  "cruise_partitions_32": {
+    "classifiers": {
+      "CART": "timeout"
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          -9.997294697480182,
+          -7.999953544093292,
+          1.3707496539838717e-05
+        ],
+        "min_outer": [
+          -9.997294697480182,
+          -7.999953544093292,
+          1.3707496539838717e-05
+        ],
+        "max_inner": [
+          19.99989873256609,
+          19.999333785826952,
+          199.99981841864155
+        ],
+        "max_outer": [
+          19.99989873256609,
+          19.999333785826952,
+          199.99981841864155
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 389952,
+        "num_flattened": 1169856
+      }
+    }
+  },
+  "oil_pump_partitions_32": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 7361,
+          "inner nodes": 3680,
+          "paths": 3681,
+          "bandwidth": 12
+        },
+        "time": "01:51:41.154"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          1.1586902272009426e-05,
+          4.8001003151820685,
+          5.463719468967732e-06,
+          -0.0999970080537432
+        ],
+        "min_outer": [
+          1.1586902272009426e-05,
+          4.8001003151820685,
+          5.463719468967732e-06,
+          -0.0999970080537432
+        ],
+        "max_inner": [
+          20.09976102027628,
+          25.29974307181664,
+          1.999994443275543,
+          2.099987969987089
+        ],
+        "max_outer": [
+          20.09976102027628,
+          25.29974307181664,
+          1.999994443275543,
+          2.099987969987089
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 187488,
+        "num_flattened": 374976
+      }
+    }
+  },
+  "dcdc_boost_converter_partitions_32": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 14659,
+          "inner nodes": 7329,
+          "paths": 7330,
+          "bandwidth": 13
+        },
+        "time": "01:17:36.370"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          9.07528464274443e-06,
+          14.49000107398972,
+          30.000000469551605
+        ],
+        "min_outer": [
+          9.07528464274443e-06,
+          14.49000107398972,
+          30.000000469551605
+        ],
+        "max_inner": [
+          4.009735421096066,
+          15.509951171031148,
+          200.99939446879569
+        ],
+        "max_outer": [
+          4.009735421096066,
+          15.509951171031148,
+          200.99939446879569
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          9
+        ],
+        "step_size": null,
+        "num_rows": 243200,
+        "num_flattened": 486400
+      }
+    }
+  },
+  "dcdc_controller_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 1195,
+          "inner nodes": 597,
+          "paths": 598,
+          "bandwidth": 10
+        },
+        "time": "00:00:14.605"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2"
+        ],
+        "categorical": [],
+        "min_inner": [
+          1.0148776472265418e-09,
+          14.491068250972084,
+          30.01322368930649
+        ],
+        "min_outer": [
+          1.0148776472265418e-09,
+          14.491068250972084,
+          30.01322368930649
+        ],
+        "max_inner": [
+          4.951239728464802,
+          16.337723634447602,
+          200.96112932561115
+        ],
+        "max_outer": [
+          4.951239728464802,
+          16.337723634447602,
+          200.96112932561115
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 8624,
+        "num_flattened": 8624
+      }
+    }
+  },
+  "op_controller_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 333,
+          "inner nodes": 166,
+          "paths": 167,
+          "bandwidth": 8
+        },
+        "time": "00:00:07.383"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0033010797771895,
+          4.812643314689511,
+          0.0,
+          -8.977463680744032
+        ],
+        "min_outer": [
+          0.0033010797771895,
+          4.812643314689511,
+          0.0,
+          -8.977463680744032
+        ],
+        "max_inner": [
+          20.09344847312999,
+          25.297351234649664,
+          1.9999177901488785,
+          2.099816869310557
+        ],
+        "max_outer": [
+          20.09344847312999,
+          25.297351234649664,
+          1.9999177901488785,
+          2.099816869310557
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 4816,
+        "num_flattened": 4816
+      }
+    }
+  },
+  "op_controller_partitions_32": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 393,
+          "inner nodes": 196,
+          "paths": 197,
+          "bandwidth": 8
+        },
+        "time": "00:00:20.253"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1",
+          "x_2",
+          "x_3"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.010643322537736,
+          4.802552579635584,
+          0.0,
+          -8.961546213140261
+        ],
+        "min_outer": [
+          0.010643322537736,
+          4.802552579635584,
+          0.0,
+          -8.961546213140261
+        ],
+        "max_inner": [
+          20.09748149704315,
+          25.29407997377594,
+          1.9994242829425928,
+          2.0998233667524384
+        ],
+        "max_outer": [
+          20.09748149704315,
+          25.29407997377594,
+          1.9994242829425928,
+          2.0998233667524384
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 9632,
+        "num_flattened": 9632
+      }
+    }
+  },
+  "rw_controller_partitions_16": {
+    "classifiers": {
+      "CART": {
+        "stats": {
+          "nodes": 23,
+          "inner nodes": 11,
+          "paths": 12,
+          "bandwidth": 4
+        },
+        "time": "00:00:00.043"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "variables": [
+          "x_0",
+          "x_1"
+        ],
+        "categorical": [],
+        "min_inner": [
+          0.0026009243511718,
+          0.0048712404210526
+        ],
+        "min_outer": [
+          0.0026009243511718,
+          0.0048712404210526
+        ],
+        "max_inner": [
+          1.1949586665747658,
+          1.1885070694545945
+        ],
+        "max_outer": [
+          1.1949586665747658,
+          1.1885070694545945
+        ],
+        "step_size": null
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          0
+        ],
+        "max": [
+          1
+        ],
+        "step_size": null,
+        "num_rows": 192,
+        "num_flattened": 192
+      }
+    }
+  }
+}

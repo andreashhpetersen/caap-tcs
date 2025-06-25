@@ -1,0 +1,28 @@
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[project]
+name = "uppaal_gym"
+version = "0.0.1"
+authors = [
+  { name="Andreas Holck Høeg-Petersen", email="ahhp@cs.aau.dk" },
+]
+description = "A bunch of UPPAAL models implemented as Gymnasium environments to allow interfacing with RL libraries such as stable_baselines3"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    'numpy',
+    'gymnasium',
+    'matplotlib',
+    'scipy'
+]
+
+[project.urls]
+"Homepage" = "https://github.com/andreashhpetersen/uppaal-gym"
+"Bug Tracker" = "https://github.com/andreashhpetersen/uppaal-gym/issues"

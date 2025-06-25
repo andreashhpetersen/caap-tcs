@@ -1,0 +1,10 @@
+gymnasium
+matplotlib
+numpy
+pydot
+scikit-learn
+pandas
+tqdm
+joblib
+stable-baselines3
+dtcontrol
